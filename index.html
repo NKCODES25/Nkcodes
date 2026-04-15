@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Letter Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="controls card" aria-label="Customization controls">
+        <h1>💌 Love Letter Builder</h1>
+        <p>
+          Write your message (up to 1000 words) and add up to 3 images to make
+          your letter special.
+        </p>
+
+        <label for="recipient">Recipient name</label>
+        <input id="recipient" type="text" maxlength="60" placeholder="My love" />
+
+        <label for="message">Love letter text</label>
+        <textarea
+          id="message"
+          rows="12"
+          placeholder="Write your letter here..."
+        ></textarea>
+        <p class="meta">
+          <span id="wordCount">0</span>/1000 words
+          <span id="wordWarning" role="alert" aria-live="polite"></span>
+        </p>
+
+        <fieldset>
+          <legend>Upload up to 3 images</legend>
+          <input id="imageInput" type="file" accept="image/*" multiple />
+          <p class="meta">You can pick 1, 2, or 3 images.</p>
+        </fieldset>
+      </section>
+
+      <section class="letter-scene" aria-label="Love letter preview">
+        <div class="envelope-shadow"></div>
+        <article class="letter card">
+          <div class="wax-seal" aria-hidden="true">♥</div>
+          <h2>Dear <span id="previewRecipient">My love</span>,</h2>
+          <p id="previewMessage">
+            Start typing your letter to see a beautiful preview here.
+          </p>
+          <div id="previewImages" class="photo-grid"></div>
+          <p class="signature">Forever yours 💖</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
